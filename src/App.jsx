@@ -14,7 +14,7 @@ import {
     tvsAmbilight,
     tvsHighRefreshRate
 } from "./helpers/arraymethods.js";
-
+import {televisionBrandList} from "./helpers/arraymethodsui.js";
 
 function App() {
     const findNH3216SMART = inventory.find((product) => product.type === `NH3216SMART`)
@@ -31,6 +31,7 @@ function App() {
           <p>Opdracht 2c: String voor schermgroottes van één tv: {calcAvailableSizes(bestSellingTv.availableSizes)}</p>
           <p></p>
           <h2>Deel 2</h2>
+          <h3>Opdracht 1</h3>
           <p>Opdracht 1a: Lijst met tv-type namen: zie console log{console.log(arrayOfTvTypes(inventory))}</p>
           <p>Opdracht 1b: Lijst met uitverkochte TVs: zie console log{console.log(soldOutTvs(inventory))}</p>
           <p>Opdracht 1c: Haal informatie van NH3216SMART op: zie console log{console.log(findNH3216SMART)}</p>
@@ -39,6 +40,10 @@ function App() {
           <p>Opdracht 1e: Verzamel TVs die beschikbaar zijn en 65 inch en groter zijn: zie console
               log{console.log(available65PlusTvs(inventory))}</p>
           <p>Opdracht 1f: Verzamel TVs die over ambilight beschikken: zie console log{console.log(tvsAmbilight(inventory))}</p>
+          <p></p>
+          <h3>Opdracht2</h3>
+          <p>Opdracht 2a: Alle tv merken: {inventory.map((product) => {return product.brand}).join(" | ")}</p>
+          {televisionBrandList(inventory)}
 
       </main>
   )
